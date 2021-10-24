@@ -1,0 +1,86 @@
+
+
+<?php 
+// include "./insertseller.php";
+  // include "./config.php";
+// if(isset($_POST['sellermobile'])){
+  // $mobile=$_POST['sellermobile'];
+
+// }  
+// print_r($_POST['submit']);
+?>
+<?php
+// session_start();
+include "conn.php";
+error_reporting(0);
+
+if(isset($_POST['done'])){
+  $_POST['email']==null;
+    // user double submitted 
+}
+$username_error="";
+$email_error="";
+$mobile_error="";
+$conn=mysqli_connect("localhost","root","","user");
+if(isset($_POST['done'])){
+if(empty($_POST['username'])){
+  $username_error="<p style='color:red; position:absolute'>Please enter name !<p/>";
+}
+if(empty($_POST['mobile'])){
+  $mobile_error="<p style='color:red; position:absolute'>Please enter mobile no!<p/>";
+}
+if(empty($_POST['password'])){
+  $password_error="<p style='color:red; position:absolute'>Please enter password !<p/>";
+}
+if(empty($_POST['cpassword'])){
+  $cpassword_error="<p style='color:red; position:absolute'>password cannot be blank !<p/>";
+}
+
+
+}
+
+/////////////////mobile nunber validaio
+
+
+
+
+if(isset($_POST['submit'])){
+if(empty($_POST['mobile'])){
+  $mobile_error="<p  style='position:absolute; color:red'>Please enter mobile !<p/>";
+}
+else{
+  $mobile = $_POST['mobile'];
+  if(!preg_match("/^[6-9]\d{9}$/",$mobile)){
+    $mobile_error="<p class='text-danger' style='position:absolute'>Please enter 10 digit mobile number!<p/>";
+
+  }
+  }
+
+}
+
+if(isset($_POST['submit'])){
+  if(empty($_POST['email'])){
+    $email_error="<p class='text-danger' style='position:absolute'>Please enter email !<p/>";
+  }
+  else{
+    if(!filter_var($_POST['email'],FILTER_VALIDATE_EMAIL))
+    {
+      $email_error="<p class='text-danger' style='position:absolute'>Please enter valid email !<p/>";
+    }
+  }
+  }
+
+if(!empty($_POST['username'] && $_POST['email'] && $_POST['mobile'] && $_POST['email'] && $_POST['password']) && $_POST['cpassword'] && $mobile_error==""){
+  $username=$_POST['username'];
+  $email=$_POST['email'];
+  $mobile=$_POST['mobile'];
+  $password=$_POST['password'];
+  $cpassword=$_POST['cpassword'];
+  
+  $insertquery="INSERT INTO register( 'username',  'mobile', 'email', 'password') VALUES ('$username','$mobile','$email','$password')";
+  $query=mysqli_query($conn,$insertquery);
+  
+     
+
+
+?>

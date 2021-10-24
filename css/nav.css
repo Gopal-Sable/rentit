@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Girassol&family=Pattaya&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#logo{
+    font-family: 'Girassol', cursive;
+}
+li{
+    list-style: none;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
+    background-color: #496466;
+  }
+  
+  li {
+    float: left; 
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: #1a4531;
+    color: aqua;
+  }
+  li a:active{
+      background-color: #04AA6D;
+  }
+  

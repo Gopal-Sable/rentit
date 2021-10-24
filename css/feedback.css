@@ -1,0 +1,84 @@
+:root{
+    --myfont:Mulish,sans-serif;
+    --my-btn-font : 'Montserrat',sans-serif;
+    --lg-lightcolor: linear-gradient(to left, rgba(116,235,213,0.6),rgba(159,172,230,0)) ;
+    --lg-color: linear-gradient(to left , #74ebd5,#9face6) ; 
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),0 6.7px 5.3px rgba(0, 0, 0, 0.048);
+    overflow: hidden;
+   flex-direction: column;
+    max-width: 100%;
+    /* width: 400px; */
+    height: 80vh;
+    /* width: calc(100vw-65vw); */
+}
+.form-control{
+    height: 75px;
+    width: 270px;
+}
+body{
+    background: url("https://cdn.pixabay.com/photo/2016/05/05/02/37/sunset-1373171__340.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+textarea{
+    width: 270px;
+    height: 65px;
+}
+small{
+    color: #0007e0;
+}
+label{
+    font-weight: bolder;
+    color:#98e4a7;
+}
+form{
+    width: 400px;
+    display: flex;
+    height: 430px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+}
+.btn{
+    margin-top: 50px;
+    background:var(--lg-color);
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    color: #fff;
+    display: block;
+    font-family: var(--my-btn-font);
+    font-size: 16px;
+    height: 40px;
+  
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 1s ease;
+}
+.btn:hover{
+    background: linear-gradient(to right,#74ebd5,#9face6);
+}
+input{
+    width: 270px;
+    height: 30px;
+    border-radius: 5px;
+}
+textarea{
+    border-radius: 5px;
+}
+h2{
+    color: #84d8a5;
+}
